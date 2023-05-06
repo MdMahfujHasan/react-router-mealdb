@@ -12,12 +12,17 @@ import Contact from './components/Contact/Contact';
 import Meals from './components/Meals/Meals';
 import MealDetail from './components/MealDetail/MealDetail';
 import NotFound from './components/NotFound/NotFound';
+import Welcome from './components/Welcome/Welcome';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
     children: [
+      {
+        path: "/",
+        element: <Welcome></Welcome>
+      },
       {
         path: "about",
         element: <About></About>
