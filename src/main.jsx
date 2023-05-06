@@ -11,6 +11,7 @@ import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Meals from './components/Meals/Meals';
 import MealDetail from './components/MealDetail/MealDetail';
+import NotFound from './components/NotFound/NotFound';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         path: "meal/:mealId",
         element: <MealDetail></MealDetail>,
         loader: ({ params }) => fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.mealId}`)
+      },
+      {
+        path: "*",
+        element: <NotFound></NotFound>
       }
     ]
   }
